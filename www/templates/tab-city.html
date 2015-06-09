@@ -1,0 +1,22 @@
+<ion-view view-title="Погода">
+  <ion-content class="padding">
+    <div class="item item-input" style="border: none">
+      <label class="item item-input" style="width: 100%">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input ng-model="in_city" type="text" placeholder="Search" >
+      </label>
+      <button class="button button-outline button-dark ion-search" type="button" ng-click="showPopup(in_city)"></button>
+    </div>
+    <a class="item item-avatar" ng-show="show" href={{my_ref}} >
+      <img ng-src="img/city/any-city.jpg">
+      <h2>{{curr_city}}</h2>
+    </a>
+    <h4>Города из списка</h4>
+    <ion-list>
+      <a class="item item-avatar" ng-repeat="city in cities" href="#/tab/city/{{city.id}}">
+        <img ng-src="{{city.emblem}}">
+        <h2>{{city.name}}</h2>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>
